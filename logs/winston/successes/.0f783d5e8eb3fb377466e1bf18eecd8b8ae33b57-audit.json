@@ -1,0 +1,120 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\university-management-auth-service\\logs\\winston\\successes\\.0f783d5e8eb3fb377466e1bf18eecd8b8ae33b57-audit.json",
+    "files": [
+        {
+            "date": 1686080822846,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\university-management-auth-service\\logs\\winston\\successes\\GK-2023-07-06-01.log",
+            "hash": "36e4ba5c876c2262fe39db97110e76ec9589d9250d21bf58071178ba96d5cd11"
+        },
+        {
+            "date": 1686251221025,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\university-management-auth-service\\logs\\winston\\successes\\GK-2023-09-06-01.log",
+            "hash": "b1499d4787859fd43466fbc3cd189154b865efbc65d72ec80cad7797c0a815ad"
+        },
+        {
+            "date": 1686339119659,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\university-management-auth-service\\logs\\winston\\successes\\GK-2023-10-06-01.log",
+            "hash": "07b8f418f86246c20b523e85b87ce1062da4059d9923b6448c095ffb9ea5d704"
+        },
+        {
+            "date": 1686426583961,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\university-management-auth-service\\logs\\winston\\successes\\GK-2023-11-06-01.log",
+            "hash": "ecad6ca624ccf6c9525d77c41b3d40a54246037e5bb0e1fe46bfb511a36756bb"
+        },
+        {
+            "date": 1686427585611,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\university-management-auth-service\\logs\\winston\\successes\\GK-2023-11-06-02.log",
+            "hash": "e4ad09d06bc78ebd9d41e74091960387dca6151988fbf919a96c41f6838a27f6"
+        },
+        {
+            "date": 1686512110303,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\university-management-auth-service\\logs\\winston\\successes\\GK-2023-12-06-01.log",
+            "hash": "0a11826e8fbb50fc7ab3e477b87ac25aec5e18441ecd7b4a0f5ca81157a7ec11"
+        },
+        {
+            "date": 1686513682334,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\university-management-auth-service\\logs\\winston\\successes\\GK-2023-12-06-02.log",
+            "hash": "0480462aed163cbb70f056bc57c312069a541ee1f5d8625a68e3726ca22e4bbb"
+        },
+        {
+            "date": 1686684546732,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\university-management-auth-service\\logs\\winston\\successes\\GK-2023-14-06-01.log",
+            "hash": "719886de9651cb59a866e3f148e5e578102331ac7e0851f4f45a69829aa9aa5a"
+        },
+        {
+            "date": 1686687107067,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\university-management-auth-service\\logs\\winston\\successes\\GK-2023-14-06-02.log",
+            "hash": "3952bfdd4ed410305c9baf200b0cf992fc58ac4c125f310a85d9622fc186c2d5"
+        },
+        {
+            "date": 1686856804397,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\university-management-auth-service\\logs\\winston\\successes\\GK-2023-16-06-01.log",
+            "hash": "775b6506e5f0a2cdccaae51bb3145a8f53937de5a156d51b8f777fd5e08ed60e"
+        },
+        {
+            "date": 1686859299445,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\university-management-auth-service\\logs\\winston\\successes\\GK-2023-16-06-02.log",
+            "hash": "e02ff4ad14820fc3e18d5f99cfbb3d1e2abb6bac59fe346ad57b1616cf998b38"
+        },
+        {
+            "date": 1686946351358,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\university-management-auth-service\\logs\\winston\\successes\\GK-2023-17-06-02.log",
+            "hash": "db84fbd0c2b135e4cdee86508f75334427e4f9e5d47c446ae291226faa1e6572"
+        },
+        {
+            "date": 1686989567029,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\university-management-auth-service\\logs\\winston\\successes\\GK-2023-17-06-14.log",
+            "hash": "8b594e25627875bf99cd987140d06bcd90cb77d8d132ca0f3b11a0566f939b14"
+        },
+        {
+            "date": 1686992433393,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\university-management-auth-service\\logs\\winston\\successes\\GK-2023-17-06-15.log",
+            "hash": "121dadb8c48d78341d65c7065d4deab33d4dba3c9f0582e97761ee09319a400e"
+        },
+        {
+            "date": 1686999018737,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\university-management-auth-service\\logs\\winston\\successes\\GK-2023-17-06-16.log",
+            "hash": "aa3ce3034d392ca538b83527c41b66059c1b4331bae3f0f8a5b0aec4f2451c95"
+        },
+        {
+            "date": 1686999662353,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\university-management-auth-service\\logs\\winston\\successes\\GK-2023-17-06-17.log",
+            "hash": "f7019516c36654070e9479e01f09340867f7fd2469da4d33a5a5674e7271b77c"
+        },
+        {
+            "date": 1687017368971,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\university-management-auth-service\\logs\\winston\\successes\\GK-2023-17-06-21.log",
+            "hash": "1db851ccf8d2b4ad4df7e90af6790876ec0317e4ddb2d9584987872fad1d0106"
+        },
+        {
+            "date": 1687018763578,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\university-management-auth-service\\logs\\winston\\successes\\GK-2023-17-06-22.log",
+            "hash": "592b9295ab25f590a0d63ed5577a08d1d3a8ade495898adc4a9ef455c87d324c"
+        },
+        {
+            "date": 1687027377789,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\university-management-auth-service\\logs\\winston\\successes\\GK-2023-18-06-00.log",
+            "hash": "b58da70c01e62ea79b9226d8eab5b3a721bad6585a504afe7728058b9ea2e7e1"
+        },
+        {
+            "date": 1687031332126,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\university-management-auth-service\\logs\\winston\\successes\\GK-2023-18-06-01.log",
+            "hash": "f8d679b061acb7b8fe41c945bf9af448e1e88f08d6691e405ebd7a3c5948b2fa"
+        },
+        {
+            "date": 1687032667629,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\university-management-auth-service\\logs\\winston\\successes\\GK-2023-18-06-02.log",
+            "hash": "39751f8fc5c1da86fc08797ef411772c6904210aa20e474e2066cc32726a71d3"
+        },
+        {
+            "date": 1687035899182,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\university-management-auth-service\\logs\\winston\\successes\\GK-2023-18-06-03.log",
+            "hash": "d28e32c7804af68971e57f14e7e77221739c23e7f0043eac7484b55aebe86c81"
+        }
+    ],
+    "hashType": "sha256"
+}

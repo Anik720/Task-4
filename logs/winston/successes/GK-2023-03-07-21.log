@@ -1,0 +1,96 @@
+{
+  message: 'Database connected successfully',
+  level: 'info',
+  label: 'GK!',
+  timestamp: '2023-07-03T15:49:50.556Z'
+}
+{
+  message: 'app listening on port 5000',
+  level: 'info',
+  label: 'GK!',
+  timestamp: '2023-07-03T15:49:50.574Z'
+}
+{
+  message: 'Database connected successfully',
+  level: 'info',
+  label: 'GK!',
+  timestamp: '2023-07-03T15:50:22.803Z'
+}
+{
+  message: 'app listening on port 5000',
+  level: 'info',
+  label: 'GK!',
+  timestamp: '2023-07-03T15:50:22.817Z'
+}
+{
+  message: 'Database connected successfully',
+  level: 'info',
+  label: 'GK!',
+  timestamp: '2023-07-03T15:56:43.067Z'
+}
+{
+  message: 'app listening on port 5000',
+  level: 'info',
+  label: 'GK!',
+  timestamp: '2023-07-03T15:56:43.081Z'
+}
+{
+  message: 'Database connected successfully',
+  level: 'info',
+  label: 'GK!',
+  timestamp: '2023-07-03T15:57:17.233Z'
+}
+{
+  message: 'app listening on port 5000',
+  level: 'info',
+  label: 'GK!',
+  timestamp: '2023-07-03T15:57:17.248Z'
+}
+{
+  message: 'Database connected successfully',
+  level: 'info',
+  label: 'GK!',
+  timestamp: '2023-07-03T15:57:45.683Z'
+}
+{
+  message: 'app listening on port 5000',
+  level: 'info',
+  label: 'GK!',
+  timestamp: '2023-07-03T15:57:45.699Z'
+}
+{
+  message: 'Database connected successfully',
+  level: 'info',
+  label: 'GK!',
+  timestamp: '2023-07-03T15:57:56.615Z'
+}
+{
+  message: 'app listening on port 5000',
+  level: 'info',
+  label: 'GK!',
+  timestamp: '2023-07-03T15:57:56.628Z'
+}
+{
+  message: 'Database connected successfully',
+  level: 'info',
+  label: 'GK!',
+  timestamp: '2023-07-03T15:58:02.601Z'
+}
+{
+  message: 'app listening on port 5000',
+  level: 'info',
+  label: 'GK!',
+  timestamp: '2023-07-03T15:58:02.614Z'
+}
+{
+  message: 'Database connected successfully',
+  level: 'info',
+  label: 'GK!',
+  timestamp: '2023-07-03T15:58:37.857Z'
+}
+{
+  message: 'app listening on port 5000',
+  level: 'info',
+  label: 'GK!',
+  timestamp: '2023-07-03T15:58:37.870Z'
+}

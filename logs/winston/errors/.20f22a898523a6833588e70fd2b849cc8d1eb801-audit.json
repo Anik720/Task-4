@@ -1,0 +1,25 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\copy\\logs\\winston\\errors\\.20f22a898523a6833588e70fd2b849cc8d1eb801-audit.json",
+    "files": [
+        {
+            "date": 1687170304664,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\copy\\logs\\winston\\errors\\GK-2023-19-06-16-error.log",
+            "hash": "f4c4bb39f1a2fc1d2ecd3cc5d8ea4f0e64d8ce54b3a17e4650bdc3675d9974f9"
+        },
+        {
+            "date": 1687271731029,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\copy\\logs\\winston\\errors\\GK-2023-20-06-20-error.log",
+            "hash": "fbf93322d5432b85bb7910f57c010d4c908ae88779b89654403c089267109fdf"
+        },
+        {
+            "date": 1687458368966,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\copy\\logs\\winston\\errors\\GK-2023-23-06-00-error.log",
+            "hash": "603183911213c4baf20cbe8ca0f2da4c07a2eb5ce79236d4ba857c42664540bc"
+        }
+    ],
+    "hashType": "sha256"
+}

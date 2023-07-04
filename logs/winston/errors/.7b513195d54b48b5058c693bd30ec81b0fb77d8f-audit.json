@@ -1,0 +1,30 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\Assignment-3\\logs\\winston\\errors\\.7b513195d54b48b5058c693bd30ec81b0fb77d8f-audit.json",
+    "files": [
+        {
+            "date": 1687099774150,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\Assignment-3\\logs\\winston\\errors\\GK-2023-18-06-20-error.log",
+            "hash": "bbd803e8550e9d771657648c8707f21f344fa1b3160c69342fc7807469084d18"
+        },
+        {
+            "date": 1687100632012,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\Assignment-3\\logs\\winston\\errors\\GK-2023-18-06-21-error.log",
+            "hash": "9342d7416489e9fbb91059ab485391c61331a026830e1df7d9da2239b2cc82b4"
+        },
+        {
+            "date": 1687106990074,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\Assignment-3\\logs\\winston\\errors\\GK-2023-18-06-22-error.log",
+            "hash": "7253aa3627caa1fddac3c2e3043121ed7041dc55c7fac7be19f6cd11ddaffdfd"
+        },
+        {
+            "date": 1687108209708,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\Assignment-3\\logs\\winston\\errors\\GK-2023-18-06-23-error.log",
+            "hash": "0339bf6080119024af9a7c082a36a6394bc42ef68da08994472b42bf4b669606"
+        }
+    ],
+    "hashType": "sha256"
+}

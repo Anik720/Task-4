@@ -1,0 +1,39 @@
+{
+  stringValue: '"i"',
+  messageFormat: undefined,
+  kind: 'number',
+  value: 'i',
+  path: 'year',
+  reason: null,
+  valueType: 'string',
+  model: Model { AcademicSemester },
+  level: 'error',
+  label: 'GK!',
+  timestamp: '2023-06-17T11:04:19.993Z'
+}
+{
+  stringValue: '"i"',
+  messageFormat: undefined,
+  kind: 'number',
+  value: 'i',
+  path: 'year',
+  reason: null,
+  valueType: 'string',
+  model: Model { AcademicSemester },
+  level: 'error',
+  label: 'GK!',
+  timestamp: '2023-06-17T11:09:54.916Z'
+}
+{
+  stringValue: '"i"',
+  messageFormat: undefined,
+  kind: 'number',
+  value: 'i',
+  path: 'year',
+  reason: null,
+  valueType: 'string',
+  model: Model { AcademicSemester },
+  level: 'error',
+  label: 'GK!',
+  timestamp: '2023-06-17T11:11:10.305Z'
+}

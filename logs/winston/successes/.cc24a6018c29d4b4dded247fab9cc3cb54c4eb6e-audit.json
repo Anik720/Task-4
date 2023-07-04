@@ -1,0 +1,70 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\copy 3\\logs\\winston\\successes\\.cc24a6018c29d4b4dded247fab9cc3cb54c4eb6e-audit.json",
+    "files": [
+        {
+            "date": 1688323550417,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\copy 3\\logs\\winston\\successes\\GK-2023-03-07-00.log",
+            "hash": "082e769465e4c3479a0754fcd0638663fc0d026a901ace6224dec1da79123d33"
+        },
+        {
+            "date": 1688363684105,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\copy 3\\logs\\winston\\successes\\GK-2023-03-07-11.log",
+            "hash": "250f1522e5befb75c31bf360f0fba6e310d335dd16c90e2c4c9b70b784920b7a"
+        },
+        {
+            "date": 1688364701938,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\copy 3\\logs\\winston\\successes\\GK-2023-03-07-12.log",
+            "hash": "7842f32e9ab8d8e32dc41173d5b521249a1a9d250c079ee6e1fd315524f91efe"
+        },
+        {
+            "date": 1688389952528,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\copy 3\\logs\\winston\\successes\\GK-2023-03-07-19.log",
+            "hash": "9faafd3a6ee83dfeeaee4472dcdf7fbca22f5b290ff242680e9d0cc4a5015377"
+        },
+        {
+            "date": 1688393127446,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\copy 3\\logs\\winston\\successes\\GK-2023-03-07-20.log",
+            "hash": "3c4c24489baf6a8d1ef1fddaa043e9622daf5ddcb2f2ece31d65ec1edcd521d8"
+        },
+        {
+            "date": 1688399387072,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\copy 3\\logs\\winston\\successes\\GK-2023-03-07-21.log",
+            "hash": "96c380d2d3111a71e7c197e7c4eb6c6fb56934891fb3f7e0df2d30eada22f457"
+        },
+        {
+            "date": 1688400006549,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\copy 3\\logs\\winston\\successes\\GK-2023-03-07-22.log",
+            "hash": "9580104d82cf739cca7dfa93f5222409497e1dfc33108b155ec304671b745441"
+        },
+        {
+            "date": 1688451588531,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\copy 3\\logs\\winston\\successes\\GK-2023-04-07-12.log",
+            "hash": "cdf63f98f739794c2861ced6a88fef659f7c0239d5a8b25c8478d0b7ab39a35b"
+        },
+        {
+            "date": 1688454082743,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\copy 3\\logs\\winston\\successes\\GK-2023-04-07-13.log",
+            "hash": "4e1d43e199f19a4739428ed24b2f55b5aa4844791699d955c94589efa15a11d5"
+        },
+        {
+            "date": 1688458085376,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\copy 3\\logs\\winston\\successes\\GK-2023-04-07-14.log",
+            "hash": "017a1e28fd8ac2066641454d9fbb16f2795937a93260a1fcc883a43b84c79f5c"
+        },
+        {
+            "date": 1688484532225,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\copy 3\\logs\\winston\\successes\\GK-2023-04-07-21.log",
+            "hash": "d3eaa009a96edf9a36909dc8fb8f62612ff9444f8ba4ac71a5945884e845544b"
+        },
+        {
+            "date": 1688486440703,
+            "name": "C:\\Users\\Golam Kibria Anik\\Desktop\\Jhankar\\copy 3\\logs\\winston\\successes\\GK-2023-04-07-22.log",
+            "hash": "0dd45ef9fce2f76845c783ba128d874f3b58e4e381b3620974fd32d9fd30c291"
+        }
+    ],
+    "hashType": "sha256"
+}
