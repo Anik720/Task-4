@@ -181,8 +181,12 @@ const getSingleCow = (id) => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield cow_model_1.default.findOne({ _id: id });
     return result;
 });
-const updateCow = (id, payload) => __awaiter(void 0, void 0, void 0, function* () {
+const updateCow = (id, loggedinUser, payload) => __awaiter(void 0, void 0, void 0, function* () {
     const isExist = yield cow_model_1.default.findOne({ _id: id });
+    console.log(209, isExist);
+    if (JSON.stringify(isExist === null || isExist === void 0 ? void 0 : isExist.seller) !== JSON.stringify(loggedinUser.userId)) {
+        throw new ApiErrors_1.default(http_status_1.default.NOT_FOUND, 'You are not authorized!');
+    }
     if (!isExist) {
         throw new ApiErrors_1.default(http_status_1.default.NOT_FOUND, 'Cow not found !');
     }
@@ -191,7 +195,13 @@ const updateCow = (id, payload) => __awaiter(void 0, void 0, void 0, function* (
     });
     return result;
 });
-const deleteCow = (id) => __awaiter(void 0, void 0, void 0, function* () {
+const deleteCow = (id, loggedinUser) => __awaiter(void 0, void 0, void 0, function* () {
+    const isExist = yield cow_model_1.default.findOne({ _id: id });
+    console.log(220, isExist);
+    if (isExist &&
+        JSON.stringify(isExist.seller) !== JSON.stringify(loggedinUser.userId)) {
+        throw new ApiErrors_1.default(http_status_1.default.NOT_FOUND, 'You are not authorized!');
+    }
     const result = yield cow_model_1.default.findByIdAndDelete({ _id: id });
     return result;
 });

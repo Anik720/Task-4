@@ -10,7 +10,7 @@ export type ICow = {
   weight: number
   label: string
   category: string
-  seller: Types.ObjectId | IUser
+  seller: Types.ObjectId | IUser | string
 }
 
 export type CowModel = Model<ICow, Record<string, unknown>>

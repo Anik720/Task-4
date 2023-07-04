@@ -97,8 +97,39 @@ const updateUser = (id, payload) => __awaiter(void 0, void 0, void 0, function* 
     });
     return result;
 });
+const updateProfile = (loggedinUser, payload) => __awaiter(void 0, void 0, void 0, function* () {
+    const isExist = yield users_model_1.default.findOne({ _id: loggedinUser.userId });
+    if (!isExist) {
+        throw new ApiErrors_1.default(http_status_1.default.NOT_FOUND, 'User not found !');
+    }
+    const { name } = payload, userData = __rest(payload, ["name"]);
+    const updatedUserData = Object.assign({}, userData);
+    if (name && Object.keys(name).length > 0) {
+        Object.keys(name).forEach(key => {
+            const nameKey = `name.${key}` // `name.fisrtName`
+            ;
+            updatedUserData[nameKey] = name[key];
+        });
+    }
+    console.log(updatedUserData);
+    const result = yield users_model_1.default.findOneAndUpdate({ _id: loggedinUser.userId }, updatedUserData, {
+        new: true,
+    });
+    let obj = {
+        password: result === null || result === void 0 ? void 0 : result.password,
+        name: result === null || result === void 0 ? void 0 : result.name,
+        phoneNumber: result === null || result === void 0 ? void 0 : result.phoneNumber,
+        address: result === null || result === void 0 ? void 0 : result.address,
+    };
+    return obj;
+});
 const deleteUser = (id) => __awaiter(void 0, void 0, void 0, function* () {
     const result = yield users_model_1.default.findByIdAndDelete({ _id: id });
+    return result;
+});
+const myProfile = (loggedinUser) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log('loggedinUser', loggedinUser);
+    const result = yield users_model_1.default.findOne({ _id: loggedinUser === null || loggedinUser === void 0 ? void 0 : loggedinUser.userId }, { name: 1, address: 1, phoneNumber: 1 });
     return result;
 });
 exports.UserService = {
@@ -107,4 +138,6 @@ exports.UserService = {
     getSingleUser,
     updateUser,
     deleteUser,
+    myProfile,
+    updateProfile,
 };

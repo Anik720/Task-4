@@ -5,6 +5,6 @@ var ENUM_USER_ROLE;
 (function (ENUM_USER_ROLE) {
     ENUM_USER_ROLE["SUPER_ADMIN"] = "super_admin";
     ENUM_USER_ROLE["ADMIN"] = "admin";
-    ENUM_USER_ROLE["STUDENT"] = "student";
-    ENUM_USER_ROLE["FACULTY"] = "faculty";
+    ENUM_USER_ROLE["BUYER"] = "buyer";
+    ENUM_USER_ROLE["SELLER"] = "seller";
 })(ENUM_USER_ROLE = exports.ENUM_USER_ROLE || (exports.ENUM_USER_ROLE = {}));

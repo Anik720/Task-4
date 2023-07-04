@@ -6,14 +6,14 @@ export type UserName = {
   middleName: string
 }
 export type IUser = {
-  _id: ObjectId
-  phoneNumber: string
-  role: string
-  name: UserName
-  password: string
-  address: string
-  budget: number
-  income: number
+  _id?: ObjectId
+  phoneNumber?: string
+  role?: string
+  name?: UserName
+  password?: string
+  address?: string
+  budget?: number
+  income?: number
 }
 
 // export type UserModel = Model<IUser, Record<string, unknown>>

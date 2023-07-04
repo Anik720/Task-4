@@ -1,12 +1,12 @@
 import { Response } from 'express'
 type IApiResponse<T> = {
   statusCode: number
-  success: boolean
+  success?: boolean
   message?: string | null
   meta?: {
-    page: number
-    limit: number
-    total: number
+    page?: number
+    limit?: number
+    total?: number
   }
   data?: T | null
 }

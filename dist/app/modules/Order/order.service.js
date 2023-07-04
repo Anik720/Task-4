@@ -21,11 +21,15 @@ const users_model_1 = __importDefault(require("../users/users.model"));
 const cow_model_1 = __importDefault(require("../cow/cow.model"));
 const order_model_1 = __importDefault(require("./order.model"));
 const createOrder = (order) => __awaiter(void 0, void 0, void 0, function* () {
-    const findBuyer = yield users_model_1.default.findById({ _id: order.buyer });
-    const findCow = yield cow_model_1.default.findById({ _id: order.cow });
+    const findBuyer = yield users_model_1.default.findById({ _id: order.buyer }, { budget: 1 });
+    const findCow = yield cow_model_1.default.findById({ _id: order.cow }, { price: 1, label: 1, seller: 1 });
     // generate student id
     let newOrderAllData = null;
-    if (findBuyer && findCow && (findBuyer === null || findBuyer === void 0 ? void 0 : findBuyer.budget) < (findCow === null || findCow === void 0 ? void 0 : findCow.price)) {
+    if (findBuyer &&
+        findCow &&
+        (findBuyer === null || findBuyer === void 0 ? void 0 : findBuyer.budget) &&
+        (findCow === null || findCow === void 0 ? void 0 : findCow.price) &&
+        (findBuyer === null || findBuyer === void 0 ? void 0 : findBuyer.budget) < (findCow === null || findCow === void 0 ? void 0 : findCow.price)) {
         throw new ApiErrors_1.default(400, 'You have not enough budget.');
     }
     else {
@@ -35,15 +39,19 @@ const createOrder = (order) => __awaiter(void 0, void 0, void 0, function* () {
             if (findCow) {
                 findCow.label = 'sold out';
             }
-            let newBudget = findBuyer && findCow ? (findBuyer === null || findBuyer === void 0 ? void 0 : findBuyer.budget) - (findCow === null || findCow === void 0 ? void 0 : findCow.price) : 0;
+            let newBudget = findBuyer && findCow && (findBuyer === null || findBuyer === void 0 ? void 0 : findBuyer.budget) && (findCow === null || findCow === void 0 ? void 0 : findCow.price)
+                ? (findBuyer === null || findBuyer === void 0 ? void 0 : findBuyer.budget) - (findCow === null || findCow === void 0 ? void 0 : findCow.price)
+                : 0;
             if (findBuyer) {
                 findBuyer.budget = newBudget;
             }
-            const findSeller = yield users_model_1.default.findOne({ _id: findCow === null || findCow === void 0 ? void 0 : findCow.seller });
+            const findSeller = yield users_model_1.default.findOne({ _id: findCow === null || findCow === void 0 ? void 0 : findCow.seller }, { income: 1 });
             //array
             if (findSeller) {
                 findSeller.income =
-                    findCow && findSeller ? (findCow === null || findCow === void 0 ? void 0 : findCow.price) + findSeller.income : 0;
+                    findCow && findSeller && findSeller.income
+                        ? (findCow === null || findCow === void 0 ? void 0 : findCow.price) + findSeller.income
+                        : 0;
             }
             const newOrder = yield order_model_1.default.create([order], { session });
             if (!newOrder.length) {
@@ -71,19 +79,52 @@ const createOrder = (order) => __awaiter(void 0, void 0, void 0, function* () {
     }
     return newOrderAllData;
 });
-const getAllOrders = (paginationOptions) => __awaiter(void 0, void 0, void 0, function* () {
+const getAllOrders = (paginationOptions, loggedinUser) => __awaiter(void 0, void 0, void 0, function* () {
     const { page, limit, skip, sortBy, sortOrder } = pagination_1.paginationHelpers.calculatePagination(paginationOptions);
     const sortConditions = {};
+    console.log(78, loggedinUser);
     if (sortBy && sortOrder) {
         sortConditions[sortBy] = sortOrder;
     }
-    const result = yield order_model_1.default.find({})
-        .populate({ path: 'cow' })
-        .populate({ path: 'buyer' })
-        .sort(sortConditions)
-        .skip(skip)
-        .limit(limit);
-    const total = yield order_model_1.default.countDocuments({});
+    let result;
+    let total = 0;
+    if (loggedinUser.role === 'admin') {
+        console.log(86);
+        result = yield order_model_1.default.find({})
+            .populate({ path: 'cow' })
+            .populate({ path: 'buyer' })
+            .sort(sortConditions)
+            .skip(skip)
+            .limit(limit);
+        total = yield order_model_1.default.countDocuments({});
+    }
+    if (loggedinUser.role === 'buyer') {
+        result = yield order_model_1.default.find({})
+            .populate({ path: 'cow' })
+            .populate({ path: 'buyer' })
+            .sort(sortConditions)
+            .skip(skip)
+            .limit(limit);
+        total = yield order_model_1.default.countDocuments({});
+        result = result.filter(item => {
+            var _a;
+            return (JSON.stringify((_a = item === null || item === void 0 ? void 0 : item.buyer) === null || _a === void 0 ? void 0 : _a._id) === JSON.stringify(loggedinUser.userId));
+        });
+        console.log(111, result);
+    }
+    if (loggedinUser.role === 'seller') {
+        result = yield order_model_1.default.find({})
+            .populate({ path: 'cow' })
+            .populate({ path: 'buyer' })
+            .sort(sortConditions)
+            .skip(skip)
+            .limit(limit);
+        total = yield order_model_1.default.countDocuments({});
+        result = result.filter(item => {
+            return JSON.stringify(item === null || item === void 0 ? void 0 : item.cow) === JSON.stringify(loggedinUser.userId);
+        });
+        console.log(111, result);
+    }
     return {
         meta: {
             page,
@@ -93,7 +134,77 @@ const getAllOrders = (paginationOptions) => __awaiter(void 0, void 0, void 0, fu
         data: result,
     };
 });
+// const getSingleOrder = async (
+//   paginationOptions: IpaginationOptions,
+//   loggedinUser
+// ): Promise<IGenericResponse<IOrder[]>> => {
+//   const { page, limit, skip, sortBy, sortOrder } =
+//     paginationHelpers.calculatePagination(paginationOptions)
+//   const sortConditions: { [key: string]: SortOrder } = {}
+//   // console.log(78, loggedinUser)
+//   if (sortBy && sortOrder) {
+//     sortConditions[sortBy] = sortOrder
+//   }
+//   let result
+//   let total = 0
+//   if (loggedinUser.role === 'admin') {
+//     // console.log(86)
+//     result = await Order.find({_id:})
+//       .populate({ path: 'cow' })
+//       .populate({ path: 'buyer' })
+//       .sort(sortConditions)
+//       .skip(skip)
+//       .limit(limit)
+//     total = await Order.countDocuments({})
+//   }
+//   if (loggedinUser.role === 'buyer') {
+//     result = await Order.find({})
+//       .populate({ path: 'cow' })
+//       .populate({ path: 'buyer' })
+//       .sort(sortConditions)
+//       .skip(skip)
+//       .limit(limit)
+//     total = await Order.countDocuments({})
+//     result = result.filter(item => {
+//       return (
+//         JSON.stringify(item.buyer._id) === JSON.stringify(loggedinUser.userId)
+//       )
+//     })
+//     // console.log(111, result)
+//   }
+//   if (loggedinUser.role === 'seller') {
+//     result = await Order.find({})
+//       .populate({ path: 'cow' })
+//       .populate({ path: 'buyer' })
+//       .sort(sortConditions)
+//       .skip(skip)
+//       .limit(limit)
+//     total = await Order.countDocuments({})
+//     result = result.filter(item => {
+//       return (
+//         JSON.stringify(item?.cow?.seller) ===
+//         JSON.stringify(loggedinUser.userId)
+//       )
+//     })
+//     // console.log(111, result)
+//   }
+//   return {
+//     meta: {
+//       page,
+//       limit,
+//       total,
+//     },
+//     data: result,
+//   }
+// }
+const getSingleOrder = (id) => __awaiter(void 0, void 0, void 0, function* () {
+    const result = yield order_model_1.default.findOne({ _id: id })
+        .populate({ path: 'cow' })
+        .populate({ path: 'buyer' });
+    return result;
+});
 exports.OrderService = {
     createOrder,
     getAllOrders,
+    getSingleOrder,
 };

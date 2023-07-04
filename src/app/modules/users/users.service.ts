@@ -140,7 +140,7 @@ const deleteUser = async (id: string): Promise<IUser | null> => {
 
   return result
 }
-const myProfile = async (loggedinUser: string): Promise<IUser | null> => {
+const myProfile = async (loggedinUser: any): Promise<IUser | null> => {
   console.log('loggedinUser', loggedinUser)
   const result = await User.findOne(
     { _id: loggedinUser?.userId },

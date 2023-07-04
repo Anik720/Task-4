@@ -197,12 +197,12 @@ const getSingleCow = async (id: string): Promise<ICow | null> => {
 
 const updateCow = async (
   id: string,
-  loggedinUser,
+  loggedinUser: any,
   payload: Partial<ICow>
 ): Promise<ICow | null> => {
   const isExist = await Cow.findOne({ _id: id })
   console.log(209, isExist)
-  if (JSON.stringify(isExist.seller) !== JSON.stringify(loggedinUser.userId)) {
+  if (JSON.stringify(isExist?.seller) !== JSON.stringify(loggedinUser.userId)) {
     throw new ApiError(httpStatus.NOT_FOUND, 'You are not authorized!')
   }
   if (!isExist) {
@@ -215,7 +215,10 @@ const updateCow = async (
   return result
 }
 
-const deleteCow = async (id: string, loggedinUser): Promise<ICow | null> => {
+const deleteCow = async (
+  id: string,
+  loggedinUser: any
+): Promise<ICow | null> => {
   const isExist = await Cow.findOne({ _id: id })
   console.log(220, isExist)
   if (

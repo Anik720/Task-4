@@ -1,4 +1,4 @@
-import mongoose, { SortOrder } from 'mongoose'
+import mongoose, { ObjectId, SortOrder } from 'mongoose'
 import ApiError from '../../../errors/ApiErrors'
 import httpStatus from 'http-status'
 import { IpaginationOptions } from '../../../interfaces/pagination'
@@ -18,7 +18,13 @@ const createOrder = async (order: IOrder): Promise<IOrder | null> => {
 
   // generate student id
   let newOrderAllData = null
-  if (findBuyer && findCow && findBuyer?.budget < findCow?.price) {
+  if (
+    findBuyer &&
+    findCow &&
+    findBuyer?.budget &&
+    findCow?.price &&
+    findBuyer?.budget < findCow?.price
+  ) {
     throw new ApiError(400, 'You have not enough budget.')
   } else {
     const session = await mongoose.startSession()
@@ -29,7 +35,9 @@ const createOrder = async (order: IOrder): Promise<IOrder | null> => {
       }
 
       let newBudget =
-        findBuyer && findCow ? findBuyer?.budget - findCow?.price : 0
+        findBuyer && findCow && findBuyer?.budget && findCow?.price
+          ? findBuyer?.budget - findCow?.price
+          : 0
       if (findBuyer) {
         findBuyer.budget = newBudget
       }
@@ -42,7 +50,9 @@ const createOrder = async (order: IOrder): Promise<IOrder | null> => {
       //array
       if (findSeller) {
         findSeller.income =
-          findCow && findSeller ? findCow?.price + findSeller.income : 0
+          findCow && findSeller && findSeller.income
+            ? findCow?.price + findSeller.income
+            : 0
       }
       const newOrder = await Order.create([order], { session })
 
@@ -75,7 +85,7 @@ const createOrder = async (order: IOrder): Promise<IOrder | null> => {
 }
 const getAllOrders = async (
   paginationOptions: IpaginationOptions,
-  loggedinUser
+  loggedinUser: any
 ): Promise<IGenericResponse<IOrder[]>> => {
   const { page, limit, skip, sortBy, sortOrder } =
     paginationHelpers.calculatePagination(paginationOptions)
@@ -111,7 +121,7 @@ const getAllOrders = async (
 
     result = result.filter(item => {
       return (
-        JSON.stringify(item.buyer._id) === JSON.stringify(loggedinUser.userId)
+        JSON.stringify(item?.buyer?._id) === JSON.stringify(loggedinUser.userId)
       )
     })
     console.log(111, result)
@@ -127,10 +137,7 @@ const getAllOrders = async (
     total = await Order.countDocuments({})
 
     result = result.filter(item => {
-      return (
-        JSON.stringify(item?.cow?.seller) ===
-        JSON.stringify(loggedinUser.userId)
-      )
+      return JSON.stringify(item?.cow) === JSON.stringify(loggedinUser.userId)
     })
     console.log(111, result)
   }
