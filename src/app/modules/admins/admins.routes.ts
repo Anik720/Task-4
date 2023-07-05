@@ -10,9 +10,4 @@ router.post(
   AdminController.loginUser
 )
 
-router.post(
-  '/refresh-token',
-
-  AdminController.refreshToken
-)
 export const AdminRouter = router

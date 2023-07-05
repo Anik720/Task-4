@@ -9,5 +9,4 @@ const admins_controller_1 = require("./admins.controller");
 const router = express_1.default.Router();
 router.post('/create-admin', admins_controller_1.AdminController.createAdmin);
 router.post('/login', admins_controller_1.AdminController.loginUser);
-router.post('/refresh-token', admins_controller_1.AdminController.refreshToken);
 exports.AdminRouter = router;

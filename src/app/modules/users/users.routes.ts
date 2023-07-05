@@ -3,6 +3,7 @@ import { UserController } from './users.controller'
 import validateRequest from '../../middlewares/validateRequest'
 import auth from '../../middlewares/auth'
 import { ENUM_USER_ROLE } from '../../../enums/user'
+import { AdminController } from '../admins/admins.controller'
 
 const router = express.Router()
 
@@ -19,6 +20,16 @@ router.get(
 )
 
 router.post('/auth/signup', UserController.createUser)
+router.post(
+  '/auth/refresh-token',
+
+  AdminController.refreshToken
+)
+router.post(
+  '/auth/login',
+
+  AdminController.loginUser
+)
 router.get(
   '/users/:id',
   auth(ENUM_USER_ROLE.ADMIN),

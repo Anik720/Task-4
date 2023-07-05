@@ -60,6 +60,7 @@ const loginUser = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(void 0, v
     });
 }));
 const refreshToken = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    console.log('52', req.cookies);
     const { refreshToken } = req.cookies;
     const result = yield admins_service_1.AuthService.refreshToken(refreshToken);
     // set refresh token into cookie
