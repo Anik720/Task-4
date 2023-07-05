@@ -139,7 +139,6 @@ const getAllOrders = async (
     result = result.filter(item => {
       return JSON.stringify(item?.cow) === JSON.stringify(loggedinUser.userId)
     })
-    console.log(111, result)
   }
 
   return {

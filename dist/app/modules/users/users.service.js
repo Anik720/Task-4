@@ -31,7 +31,14 @@ const user_constant_1 = require("./user.constant");
 const pagination_1 = require("../../../helper/pagination");
 const createStudent = (user) => __awaiter(void 0, void 0, void 0, function* () {
     const newUser = yield users_model_1.default.create(user);
-    return newUser;
+    let obj = {
+        _id: newUser._id,
+        role: newUser.role,
+        name: newUser.name,
+        phoneNumber: newUser.phoneNumber,
+        address: newUser.address,
+    };
+    return obj;
 });
 const getAllUsers = (filters, paginationOptions) => __awaiter(void 0, void 0, void 0, function* () {
     const { searchTerm } = filters, filtersData = __rest(filters, ["searchTerm"]);

@@ -10,7 +10,15 @@ import { paginationHelpers } from '../../../helper/pagination'
 
 const createStudent = async (user: IUser): Promise<IUser | null> => {
   const newUser = await User.create(user)
-  return newUser
+  let obj = {
+    _id: newUser._id,
+    role: newUser.role,
+    name: newUser.name,
+    phoneNumber: newUser.phoneNumber,
+    address: newUser.address,
+  }
+
+  return obj
 }
 const getAllUsers = async (
   filters: IUserFilters,

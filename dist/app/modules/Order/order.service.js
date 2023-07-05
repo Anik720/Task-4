@@ -123,7 +123,6 @@ const getAllOrders = (paginationOptions, loggedinUser) => __awaiter(void 0, void
         result = result.filter(item => {
             return JSON.stringify(item === null || item === void 0 ? void 0 : item.cow) === JSON.stringify(loggedinUser.userId);
         });
-        console.log(111, result);
     }
     return {
         meta: {
