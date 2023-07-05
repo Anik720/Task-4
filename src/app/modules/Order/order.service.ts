@@ -48,11 +48,13 @@ const createOrder = async (order: IOrder): Promise<IOrder | null> => {
       )
 
       //array
-      if (findSeller) {
-        findSeller.income =
-          findCow && findSeller && findSeller.income
-            ? findCow?.price + findSeller.income
-            : 0
+      if (findSeller && findSeller?.income && findCow?.price) {
+        findSeller.income = findCow?.price + findSeller?.income
+
+        // findSeller.income =
+        //   findCow && findSeller && findSeller.income
+        //     ? findCow?.price + findSeller.income
+        //     : 0
       }
       const newOrder = await Order.create([order], { session })
 
@@ -86,7 +88,7 @@ const createOrder = async (order: IOrder): Promise<IOrder | null> => {
 const getAllOrders = async (
   paginationOptions: IpaginationOptions,
   loggedinUser: any
-): Promise<IGenericResponse<IOrder[]>> => {
+): Promise<IGenericResponse<IOrder[] | null>> => {
   const { page, limit, skip, sortBy, sortOrder } =
     paginationHelpers.calculatePagination(paginationOptions)
 
@@ -138,6 +140,10 @@ const getAllOrders = async (
 
     result = result.filter(item => {
       return JSON.stringify(item?.cow) === JSON.stringify(loggedinUser.userId)
+      // return (
+      //   JSON.stringify(item?.cow?.seller) ===
+      //   JSON.stringify(loggedinUser.userId)
+      // )
     })
   }
 

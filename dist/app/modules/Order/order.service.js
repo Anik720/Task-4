@@ -47,11 +47,12 @@ const createOrder = (order) => __awaiter(void 0, void 0, void 0, function* () {
             }
             const findSeller = yield users_model_1.default.findOne({ _id: findCow === null || findCow === void 0 ? void 0 : findCow.seller }, { income: 1 });
             //array
-            if (findSeller) {
-                findSeller.income =
-                    findCow && findSeller && findSeller.income
-                        ? (findCow === null || findCow === void 0 ? void 0 : findCow.price) + findSeller.income
-                        : 0;
+            if (findSeller && (findSeller === null || findSeller === void 0 ? void 0 : findSeller.income) && (findCow === null || findCow === void 0 ? void 0 : findCow.price)) {
+                findSeller.income = (findCow === null || findCow === void 0 ? void 0 : findCow.price) + (findSeller === null || findSeller === void 0 ? void 0 : findSeller.income);
+                // findSeller.income =
+                //   findCow && findSeller && findSeller.income
+                //     ? findCow?.price + findSeller.income
+                //     : 0
             }
             const newOrder = yield order_model_1.default.create([order], { session });
             if (!newOrder.length) {
@@ -122,6 +123,10 @@ const getAllOrders = (paginationOptions, loggedinUser) => __awaiter(void 0, void
         total = yield order_model_1.default.countDocuments({});
         result = result.filter(item => {
             return JSON.stringify(item === null || item === void 0 ? void 0 : item.cow) === JSON.stringify(loggedinUser.userId);
+            // return (
+            //   JSON.stringify(item?.cow?.seller) ===
+            //   JSON.stringify(loggedinUser.userId)
+            // )
         });
     }
     return {
