@@ -9,11 +9,12 @@ const globalErrorHandlers_1 = __importDefault(require("./app/middlewares/globalE
 const routes_1 = __importDefault(require("./app/routes"));
 const http_status_1 = __importDefault(require("http-status"));
 // const cookieParser = require('cookie-parser')
+const cookie_parser_1 = __importDefault(require("cookie-parser"));
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
-// app.use(cookieParser())
+app.use((0, cookie_parser_1.default)());
 // app.use('/api/v1/users', UserRouter)
 // app.use('/api/v1/academic-semesters', AcademicSemesterRoutes)
 app.use('/api/v1', routes_1.default);
