@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AuthService = void 0;
+exports.AdminService = void 0;
 const http_status_1 = __importDefault(require("http-status"));
 const users_model_1 = __importDefault(require("../users/users.model"));
 const ApiErrors_1 = __importDefault(require("../../../errors/ApiErrors"));
@@ -68,7 +68,7 @@ const refreshToken = (token) => __awaiter(void 0, void 0, void 0, function* () {
         accessToken: newAccessToken,
     };
 });
-exports.AuthService = {
+exports.AdminService = {
     loginUser,
     refreshToken,
 };

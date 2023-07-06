@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\Golam Kibria Anik\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add jsonwebtoken
+  C:\Program Files\nodejs\node.exe C:\Users\Golam Kibria Anik\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add cookie-parser
 
 PATH: 
   C:\Users\Golam Kibria Anik\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Golam Kibria Anik\bin;C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\wbin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\Git\cmd;C:\Program Files\nodejs;C:\Users\Golam Kibria Anik\AppData\Local\Microsoft\WindowsApps;C:\Users\Golam Kibria Anik\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\heroku\bin;C:\Users\Golam Kibria Anik\AppData\Roaming\npm;C:\Program Files\PostgreSQL\15\bin;C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Node.js;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\Users\Golam Kibria Anik\Desktop\Jhankar\copy 3\node_modules\bcrypt\lib\binding\napi-v3\bcrypt_lib.node'
+  Error: EPERM: operation not permitted, unlink 'C:\Users\Golam Kibria Anik\Desktop\Jhankar\New folder\node_modules\bcrypt\lib\binding\napi-v3\bcrypt_lib.node'
 
 npm manifest: 
   {
@@ -44,6 +44,7 @@ npm manifest:
       "@types/bcrypt": "^5.0.0",
       "@types/cors": "^2.8.13",
       "@types/express": "^4.17.17",
+      "@types/jsonwebtoken": "^9.0.2",
       "eslint-config-prettier": "^8.8.0",
       "husky": "^8.0.3",
       "lint-staged": "^13.2.2",
@@ -60,6 +61,7 @@ npm manifest:
       "eslint": "^8.41.0",
       "express": "^4.18.2",
       "http-status": "^1.6.2",
+      "jsonwebtoken": "^9.0.0",
       "mongoose": "^7.2.1",
       "winston": "^3.9.0",
       "winston-daily-rotate-file": "^4.7.1",
@@ -274,6 +276,13 @@ Lockfile:
     "integrity" "sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA=="
     "resolved" "https://registry.npmjs.org/@types/json-schema/-/json-schema-7.0.12.tgz"
     "version" "7.0.12"
+  
+  "@types/jsonwebtoken@^9.0.2":
+    "integrity" "sha512-drE6uz7QBKq1fYqqoFKTDRdFCPHd5TCub75BM+D+cMx7NU9hUz7SESLfC2fSCXVFMO5Yj8sOWHuGqPgjc+fz0Q=="
+    "resolved" "https://registry.npmjs.org/@types/jsonwebtoken/-/jsonwebtoken-9.0.2.tgz"
+    "version" "9.0.2"
+    dependencies:
+      "@types/node" "*"
   
   "@types/mime@*":
     "integrity" "sha512-Y4XFY5VJAuw0FgAqPNd6NNoV44jbq9Bz2L7Rh/J6jLTiHBSBJa9fxqQIvkIld4GsoDOcCbvzOUAbLPsSKKg+uA=="
@@ -622,6 +631,11 @@ Lockfile:
     "resolved" "https://registry.npmjs.org/bson/-/bson-5.3.0.tgz"
     "version" "5.3.0"
   
+  "buffer-equal-constant-time@1.0.1":
+    "integrity" "sha512-zRpUiDwd/xk6ADqPMATG8vc9VPrkck7T07OIx0gnjmJAnHnTVXNQG3vfvWNuiZIkwu9KrKdA1iJKfsfTVxE6NA=="
+    "resolved" "https://registry.npmjs.org/buffer-equal-constant-time/-/buffer-equal-constant-time-1.0.1.tgz"
+    "version" "1.0.1"
+  
   "buffer-from@^1.0.0":
     "integrity" "sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ=="
     "resolved" "https://registry.npmjs.org/buffer-from/-/buffer-from-1.1.2.tgz"
@@ -897,6 +911,13 @@ Lockfile:
     "integrity" "sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA=="
     "resolved" "https://registry.npmjs.org/eastasianwidth/-/eastasianwidth-0.2.0.tgz"
     "version" "0.2.0"
+  
+  "ecdsa-sig-formatter@1.0.11":
+    "integrity" "sha512-nagl3RYrbNv6kQkeJIpt6NJZy8twLB/2vtz6yN9Z4vRKHN4/QZJIEbqohALSgwKdnksuY3k5Addp5lg8sVoVcQ=="
+    "resolved" "https://registry.npmjs.org/ecdsa-sig-formatter/-/ecdsa-sig-formatter-1.0.11.tgz"
+    "version" "1.0.11"
+    dependencies:
+      "safe-buffer" "^5.0.1"
   
   "ee-first@1.1.1":
     "integrity" "sha512-WMwm9LhRUo+WUaRN+vRuETqG89IgZphVSNkdFgeb6sS/E4OrDIN7t48CAewSHXc6C8lefD8KKfr5vY61brQlow=="
@@ -1506,6 +1527,33 @@ Lockfile:
     "resolved" "https://registry.npmjs.org/json-stable-stringify-without-jsonify/-/json-stable-stringify-without-jsonify-1.0.1.tgz"
     "version" "1.0.1"
   
+  "jsonwebtoken@^9.0.0":
+    "integrity" "sha512-tuGfYXxkQGDPnLJ7SibiQgVgeDgfbPq2k2ICcbgqW8WxWLBAxKQM/ZCu/IT8SOSwmaYl4dpTFCW5xZv7YbbWUw=="
+    "resolved" "https://registry.npmjs.org/jsonwebtoken/-/jsonwebtoken-9.0.0.tgz"
+    "version" "9.0.0"
+    dependencies:
+      "jws" "^3.2.2"
+      "lodash" "^4.17.21"
+      "ms" "^2.1.1"
+      "semver" "^7.3.8"
+  
+  "jwa@^1.4.1":
+    "integrity" "sha512-qiLX/xhEEFKUAJ6FiBMbes3w9ATzyk5W7Hvzpa/SLYdxNtng+gcurvrI7TbACjIXlsJyr05/S1oUhZrc63evQA=="
+    "resolved" "https://registry.npmjs.org/jwa/-/jwa-1.4.1.tgz"
+    "version" "1.4.1"
+    dependencies:
+      "buffer-equal-constant-time" "1.0.1"
+      "ecdsa-sig-formatter" "1.0.11"
+      "safe-buffer" "^5.0.1"
+  
+  "jws@^3.2.2":
+    "integrity" "sha512-YHlZCB6lMTllWDtSPHz/ZXTsi8S00usEV6v1tjq8tOUZzw7DpSDWVXjXDre6ed1w/pd495ODpHZYSdkRTsa0HA=="
+    "resolved" "https://registry.npmjs.org/jws/-/jws-3.2.2.tgz"
+    "version" "3.2.2"
+    dependencies:
+      "jwa" "^1.4.1"
+      "safe-buffer" "^5.0.1"
+  
   "kareem@2.5.1":
     "integrity" "sha512-7jFxRVm+jD+rkq3kY0iZDJfsO2/t4BBPeEb2qKn2lR/9KhuksYk5hxzfRYWMPV8P/x2d0kHD306YyWLzjjH+uA=="
     "resolved" "https://registry.npmjs.org/kareem/-/kareem-2.5.1.tgz"
@@ -1573,6 +1621,11 @@ Lockfile:
     "integrity" "sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ=="
     "resolved" "https://registry.npmjs.org/lodash.merge/-/lodash.merge-4.6.2.tgz"
     "version" "4.6.2"
+  
+  "lodash@^4.17.21":
+    "integrity" "sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg=="
+    "resolved" "https://registry.npmjs.org/lodash/-/lodash-4.17.21.tgz"
+    "version" "4.17.21"
   
   "log-update@^4.0.0":
     "integrity" "sha512-9fkkDevMefjg0mmzWFBW8YkFP91OrizzkW3diF7CpG+S2EYdy4+TVfGwz1zeF8x7hCx1ovSPTOE9Ngib74qqUg=="
@@ -2103,7 +2156,7 @@ Lockfile:
     dependencies:
       "tslib" "^2.1.0"
   
-  "safe-buffer@~5.2.0", "safe-buffer@5.2.1":
+  "safe-buffer@^5.0.1", "safe-buffer@~5.2.0", "safe-buffer@5.2.1":
     "integrity" "sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ=="
     "resolved" "https://registry.npmjs.org/safe-buffer/-/safe-buffer-5.2.1.tgz"
     "version" "5.2.1"
@@ -2130,7 +2183,7 @@ Lockfile:
     "resolved" "https://registry.npmjs.org/semver/-/semver-6.3.0.tgz"
     "version" "6.3.0"
   
-  "semver@^7.3.5", "semver@^7.3.7":
+  "semver@^7.3.5", "semver@^7.3.7", "semver@^7.3.8":
     "integrity" "sha512-Wvss5ivl8TMRZXXESstBA4uR5iXgEN/VC5/sOcuXdVLzcdkz4HWetIoRfG5gb5X+ij/G9rw9YoGn3QoQ8OCSpw=="
     "resolved" "https://registry.npmjs.org/semver/-/semver-7.5.1.tgz"
     "version" "7.5.1"

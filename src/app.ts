@@ -5,13 +5,13 @@ import globalErrorHandler from './app/middlewares/globalErrorHandlers'
 import { UserRouter } from './app/modules/users/users.routes'
 import routes from './app/routes'
 import httpStatus from 'http-status'
-
+const cookieParser = require('cookie-parser')
 const app: Application = express()
 
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-
+app.use(cookieParser())
 // app.use('/api/v1/users', UserRouter)
 // app.use('/api/v1/academic-semesters', AcademicSemesterRoutes)
 app.use('/api/v1', routes)

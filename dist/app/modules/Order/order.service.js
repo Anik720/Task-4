@@ -141,7 +141,6 @@ const getAllOrders = (paginationOptions, loggedinUser) => __awaiter(void 0, void
 const getSingleOrder = (id, loggedinUser) => __awaiter(void 0, void 0, void 0, function* () {
     let result;
     let total = 0;
-    console.log(163, loggedinUser);
     if (loggedinUser.role === 'buyer') {
         result = yield order_model_1.default.find({ _id: id })
             .populate({ path: 'cow' })

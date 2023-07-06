@@ -42,13 +42,13 @@ const createAdmin = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(void 0,
 }));
 const loginUser = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const loginData = __rest(req.body, []);
-    const result = yield admins_service_1.AuthService.loginUser(loginData);
+    const result = yield admins_service_1.AdminService.loginUser(loginData);
     const { refreshToken } = result, others = __rest(result
     // set refresh token into cookie
     , ["refreshToken"]);
     // set refresh token into cookie
     const cookieOptions = {
-        secure: config_1.default.env === 'production',
+        secure: false,
         httpOnly: true,
     };
     res.cookie('refreshToken', refreshToken, cookieOptions);
@@ -62,7 +62,7 @@ const loginUser = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(void 0, v
 const refreshToken = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     console.log('52', req.cookies);
     const { refreshToken } = req.cookies;
-    const result = yield admins_service_1.AuthService.refreshToken(refreshToken);
+    const result = yield admins_service_1.AdminService.refreshToken(refreshToken);
     // set refresh token into cookie
     const cookieOptions = {
         secure: config_1.default.env === 'production',
@@ -72,7 +72,7 @@ const refreshToken = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(void 0
     (0, sendResponse_1.default)(res, {
         statusCode: 200,
         success: true,
-        message: 'User lohggedin successfully !',
+        message: 'New access token generated successfully !',
         data: result,
     });
 }));

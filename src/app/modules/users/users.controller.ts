@@ -96,6 +96,7 @@ const updateProfile = catchAsync(async (req: Request, res: Response) => {
     data: result,
   })
 })
+
 export const UserController = {
   createUser,
   getAllUsers,

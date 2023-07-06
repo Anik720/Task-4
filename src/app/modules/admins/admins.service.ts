@@ -90,7 +90,7 @@ const refreshToken = async (token: string): Promise<IRefreshTokenResponse> => {
   }
 }
 
-export const AuthService = {
+export const AdminService = {
   loginUser,
   refreshToken,
 }
