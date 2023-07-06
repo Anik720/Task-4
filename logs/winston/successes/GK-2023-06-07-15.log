@@ -34,3 +34,15 @@
   label: 'GK!',
   timestamp: '2023-07-06T09:12:52.368Z'
 }
+{
+  message: 'Database connected successfully',
+  level: 'info',
+  label: 'GK!',
+  timestamp: '2023-07-06T09:14:13.175Z'
+}
+{
+  message: 'app listening on port 5000',
+  level: 'info',
+  label: 'GK!',
+  timestamp: '2023-07-06T09:14:13.187Z'
+}
