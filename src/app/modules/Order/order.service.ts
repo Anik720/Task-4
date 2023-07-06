@@ -157,84 +157,45 @@ const getAllOrders = async (
   }
 }
 
-// const getSingleOrder = async (
-//   paginationOptions: IpaginationOptions,
-//   loggedinUser
-// ): Promise<IGenericResponse<IOrder[]>> => {
+const getSingleOrder = async (id: string, loggedinUser: any) => {
+  let result
+  let total = 0
 
-//   const { page, limit, skip, sortBy, sortOrder } =
-//     paginationHelpers.calculatePagination(paginationOptions)
+  if (loggedinUser.role === 'buyer') {
+    result = await Order.find({ _id: id })
+      .populate({ path: 'cow' })
+      .populate({ path: 'buyer' })
 
-//   const sortConditions: { [key: string]: SortOrder } = {}
-//   // console.log(78, loggedinUser)
-//   if (sortBy && sortOrder) {
-//     sortConditions[sortBy] = sortOrder
-//   }
+    total = await Order.countDocuments({})
 
-//   let result
-//   let total = 0
-//   if (loggedinUser.role === 'admin') {
-//     // console.log(86)
-//     result = await Order.find({_id:})
-//       .populate({ path: 'cow' })
-//       .populate({ path: 'buyer' })
-//       .sort(sortConditions)
-//       .skip(skip)
-//       .limit(limit)
+    result = result.find(item => {
+      return (
+        JSON.stringify(item?.buyer?._id) === JSON.stringify(loggedinUser.userId)
+      )
+    })
+  }
+  if (loggedinUser.role === 'seller') {
+    result = await Order.find({ _id: id })
+      .populate({ path: 'cow' })
+      .populate({ path: 'buyer' })
 
-//     total = await Order.countDocuments({})
-//   }
-//   if (loggedinUser.role === 'buyer') {
-//     result = await Order.find({})
-//       .populate({ path: 'cow' })
-//       .populate({ path: 'buyer' })
-//       .sort(sortConditions)
-//       .skip(skip)
-//       .limit(limit)
+    total = await Order.countDocuments({})
 
-//     total = await Order.countDocuments({})
+    result = result.find(item => {
+      return JSON.stringify(item?.cow) === JSON.stringify(loggedinUser.userId)
+      // return (
+      //   JSON.stringify(item?.cow?.seller) ===
+      //   JSON.stringify(loggedinUser.userId)
+      // )
+    })
+    // console.log(111, result)
+  }
 
-//     result = result.filter(item => {
-//       return (
-//         JSON.stringify(item.buyer._id) === JSON.stringify(loggedinUser.userId)
-//       )
-//     })
-//     // console.log(111, result)
-//   }
-//   if (loggedinUser.role === 'seller') {
-//     result = await Order.find({})
-//       .populate({ path: 'cow' })
-//       .populate({ path: 'buyer' })
-//       .sort(sortConditions)
-//       .skip(skip)
-//       .limit(limit)
-
-//     total = await Order.countDocuments({})
-
-//     result = result.filter(item => {
-//       return (
-//         JSON.stringify(item?.cow?.seller) ===
-//         JSON.stringify(loggedinUser.userId)
-//       )
-//     })
-//     // console.log(111, result)
-//   }
-
-//   return {
-//     meta: {
-//       page,
-//       limit,
-//       total,
-//     },
-//     data: result,
-//   }
-// }
-const getSingleOrder = async (id: string): Promise<IOrder | null> => {
-  const result = await Order.findOne({ _id: id })
-    .populate({ path: 'cow' })
-    .populate({ path: 'buyer' })
-  return result
+  return {
+    result,
+  }
 }
+
 export const OrderService = {
   createOrder,
   getAllOrders,

@@ -39,13 +39,13 @@ const getAllOrders = catchAsync(async (req: Request, res: Response) => {
 })
 const getSingleOrder = catchAsync(async (req: Request, res: Response) => {
   const id = req.params.id
+  const loggedinUser = req.user
+  const result = await OrderService.getSingleOrder(id, loggedinUser)
 
-  const result = await OrderService.getSingleOrder(id)
-
-  sendResponse<IOrder>(res, {
+  sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: 'Cow retrieved successfully',
+    message: 'Single order retrieved successfully',
     data: result,
   })
 })

@@ -54,11 +54,12 @@ const getAllOrders = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(void 0
 }));
 const getSingleOrder = (0, catchAsync_1.catchAsync)((req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const id = req.params.id;
-    const result = yield order_service_1.OrderService.getSingleOrder(id);
+    const loggedinUser = req.user;
+    const result = yield order_service_1.OrderService.getSingleOrder(id, loggedinUser);
     (0, sendResponse_1.default)(res, {
         statusCode: http_status_1.default.OK,
         success: true,
-        message: 'Cow retrieved successfully',
+        message: 'Single order retrieved successfully',
         data: result,
     });
 }));
