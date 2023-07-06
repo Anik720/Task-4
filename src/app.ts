@@ -6,9 +6,9 @@ import { UserRouter } from './app/modules/users/users.routes'
 import routes from './app/routes'
 import httpStatus from 'http-status'
 // const cookieParser = require('cookie-parser')
-import cookieParser from 'cookie-parser'
+// import cookieParser from 'cookie-parser'
 const app: Application = express()
-app.use(cookieParser())
+// app.use(cookieParser())
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
