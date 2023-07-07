@@ -8,6 +8,7 @@ import { IOrder } from './order.interface'
 import User from '../users/users.model'
 import Cow from '../cow/cow.model'
 import Order from './order.model'
+import { IObjectId } from '../cow/cow.interface'
 
 const createOrder = async (order: IOrder): Promise<IOrder | null> => {
   const findBuyer = await User.findById({ _id: order.buyer }, { budget: 1 })
@@ -129,7 +130,7 @@ const getAllOrders = async (
     console.log(111, result)
   }
   if (loggedinUser.role === 'seller') {
-    result = await Order.find({})
+    result = await Order.find({ seller: loggedinUser.userId })
       .populate({ path: 'cow' })
       .populate({ path: 'buyer' })
       .sort(sortConditions)
@@ -137,14 +138,6 @@ const getAllOrders = async (
       .limit(limit)
 
     total = await Order.countDocuments({})
-
-    result = result.filter(item => {
-      return JSON.stringify(item?.cow) === JSON.stringify(loggedinUser.userId)
-      // return (
-      //   JSON.stringify(item?.cow?.seller) ===
-      //   JSON.stringify(loggedinUser.userId)
-      // )
-    })
   }
 
   return {
@@ -175,20 +168,11 @@ const getSingleOrder = async (id: string, loggedinUser: any) => {
     })
   }
   if (loggedinUser.role === 'seller') {
-    result = await Order.find({ _id: id })
+    result = await Order.find({ _id: id, seller: loggedinUser.userId })
       .populate({ path: 'cow' })
       .populate({ path: 'buyer' })
 
     total = await Order.countDocuments({})
-
-    result = result.find(item => {
-      return JSON.stringify(item?.cow) === JSON.stringify(loggedinUser.userId)
-      // return (
-      //   JSON.stringify(item?.cow?.seller) ===
-      //   JSON.stringify(loggedinUser.userId)
-      // )
-    })
-    // console.log(111, result)
   }
 
   return {

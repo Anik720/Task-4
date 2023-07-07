@@ -1,4 +1,4 @@
-import { Model, Schema, model } from 'mongoose'
+import mongoose, { Model, Schema, model } from 'mongoose'
 import { CowModel, ICow } from './cow.interface'
 import { breed, location } from './cow.constant'
 
@@ -14,6 +14,7 @@ const cowSchema = new Schema<ICow>(
     category: { type: String, required: true },
     seller: {
       type: Schema.Types.ObjectId,
+
       ref: 'User',
       required: true,
     },

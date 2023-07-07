@@ -12,7 +12,10 @@ export type ICow = {
   category: string
   seller: Types.ObjectId | IUser | string
 }
-
+export interface IObjectId {
+  // Define properties specific to IObjectId
+  seller: Types.ObjectId | IUser | string
+}
 export type CowModel = Model<ICow, Record<string, unknown>>
 export type ICowFilters = {
   searchTerm?: string

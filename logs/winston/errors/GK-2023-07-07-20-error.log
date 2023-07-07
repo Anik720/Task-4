@@ -1,0 +1,72 @@
+{
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'cluster0.jr8ricm.mongodb.net',
+  level: 'error',
+  message: 'Failed queryTxt ETIMEOUT cluster0.jr8ricm.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT cluster0.jr8ricm.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:240:17)',
+  label: 'GK!',
+  timestamp: '2023-07-07T14:18:17.162Z'
+}
+{
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'cluster0.jr8ricm.mongodb.net',
+  level: 'error',
+  message: 'Failed queryTxt ETIMEOUT cluster0.jr8ricm.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT cluster0.jr8ricm.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:240:17)',
+  label: 'GK!',
+  timestamp: '2023-07-07T14:21:10.455Z'
+}
+{
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'cluster0.jr8ricm.mongodb.net',
+  level: 'error',
+  message: 'Failed queryTxt ETIMEOUT cluster0.jr8ricm.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT cluster0.jr8ricm.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:240:17)',
+  label: 'GK!',
+  timestamp: '2023-07-07T14:35:15.977Z'
+}
+{
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'cluster0.jr8ricm.mongodb.net',
+  level: 'error',
+  message: 'Failed queryTxt ETIMEOUT cluster0.jr8ricm.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT cluster0.jr8ricm.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:240:17)',
+  label: 'GK!',
+  timestamp: '2023-07-07T14:37:07.772Z'
+}
+{
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'cluster0.jr8ricm.mongodb.net',
+  level: 'error',
+  message: 'Failed queryTxt ETIMEOUT cluster0.jr8ricm.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT cluster0.jr8ricm.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:240:17)',
+  label: 'GK!',
+  timestamp: '2023-07-07T14:43:00.106Z'
+}
+{
+  errno: undefined,
+  code: 'ETIMEOUT',
+  syscall: 'queryTxt',
+  hostname: 'cluster0.jr8ricm.mongodb.net',
+  level: 'error',
+  message: 'Failed queryTxt ETIMEOUT cluster0.jr8ricm.mongodb.net',
+  stack: 'Error: queryTxt ETIMEOUT cluster0.jr8ricm.mongodb.net\n' +
+    '    at QueryReqWrap.onresolve [as oncomplete] (node:internal/dns/promises:240:17)',
+  label: 'GK!',
+  timestamp: '2023-07-07T14:53:41.504Z'
+}
